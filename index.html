@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <link rel="icon" href="./asset/number.png">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <!-- counter app -->
+    <main class="main-container">
+        <div class="container">
+            <h1>counter</h1>
+            <div class="counter">
+                <div class="counter-container">
+                    <span id="count">0</span>
+                </div>
+                <button id="decrease">-</button>
+                <button id="reset">reset</button>
+                <button id="increase">+</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+<script>
+
+    var inc = document.getElementById("increase");
+    var dec = document.getElementById("decrease");
+    var con = document.getElementById("count");
+    var reset = document.getElementById("reset");
+    var counter = 0;
+
+
+    inc.addEventListener("click", function () {
+        counter++;
+        con.innerHTML = counter;
+        // con.style.color="green";
+        if (counter < 0) {
+            con.style.color = "red";
+        }
+        else if (counter > 0) {
+            con.style.color = "green";
+        }
+        else if (counter == 0) {
+            con.style.color = "black";
+        };
+
+    })
+
+    dec.addEventListener("click", function () {
+        counter--;
+        con.innerHTML = counter;
+        // con.style.color="red";
+        if (counter < 0) {
+            con.style.color = "red";
+        }
+        else if (counter > 0) {
+            con.style.color = "green";
+        }
+        else if (counter == 0) {
+            con.style.color = "black";
+        };
+    })
+
+    reset.addEventListener("click", function () {
+        counter = 0;
+        con.innerHTML = counter;
+        // con.style.color="black";
+        if (counter < 0) {
+            con.style.color = "red";
+        }
+        else if (counter > 0) {
+            con.style.color = "green";
+        }
+        else if (counter == 0) {
+            con.style.color = "black";
+        };
+    });
+
+</script>
+<script src="./script.js"></script>
+
+</html>
